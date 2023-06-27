@@ -22,12 +22,24 @@ struct LocationMapAnnotationView: View {
                 .padding(6)
                 .background(accentColor)
                 .cornerRadius(36)
+            
+            Image(systemName: "triangle.fill")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(accentColor)
+                .frame(width: 10, height: 10)
+                .rotationEffect(Angle(degrees: 180))
+                .offset(y: -3)
+                .padding(.bottom, 40)
         }
     }
 }
 
 struct LocationMapAnnotationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationMapAnnotationView()
+        ZStack {
+            Color.black.ignoresSafeArea()
+            LocationMapAnnotationView()
+        }
     }
 }
